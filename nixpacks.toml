@@ -2,4 +2,6 @@
 nixPkgs = ["python39", "pipenv", "gcc"]
 
 [start]
-cmd = "gunicorn app:app"
+
+cmd = "gunicorn app:app --bind 0.0.0.0:$PORT"
+

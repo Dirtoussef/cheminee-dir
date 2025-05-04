@@ -1,5 +1,6 @@
 from flask import Flask, render_template, jsonify
 import json
+import os
 
 app = Flask(__name__)
 
@@ -15,7 +16,6 @@ def home():
 def services():
     return render_template("Services.html")
 
-
 @app.route("/Nos Réalisations")
 def realisations():
     return render_template("Nos Réalisations.html")
@@ -26,7 +26,6 @@ def produit(id):
     produit = next((p for p in produits if p["id"] == id), None)
     return render_template("Produits.html", produit=produit)
 
-
-
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 8080))  # Utilise la variable PORT imposée par Railway
+    app.run(host="0.0.0.0", port=port)
