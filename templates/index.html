@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero" style="background-image: url('{{ url_for('static', filename='imges/back.jpg') }}');">
+    <div class="hero-text">
+        <h1>Cheminée Maroc</h1>
+        <p>L'élégance et la chaleur chez vous</p>
+    </div>
+</div>
+
+
+
+<section class="types-cheminees">
+    <h2>Nos Types de Cheminées</h2>
+    <div class="grid-cheminees">
+      
+      <div class="card-cheminée">
+        <img src="{{ url_for('static', filename='imges/bois.jpeg') }}" alt="See-Through">
+        <h3>Cheminées</h3>
+        <p>Profitez d'une vue sur le feu depuis plusieurs pièces grâce à nos cheminées traversantes modernes.</p>
+      </div>
+  
+      <div class="card-cheminée">
+        <img src="{{ url_for('static', filename='imges/ethanool.jpg') }}" alt="Suspended">
+        <h3>Bioéthanol</h3>
+        <p>Des cheminées design et aériennes qui deviennent la pièce maîtresse de votre salon.</p>
+      </div>
+  
+      <div class="card-cheminée">
+        <img src="{{ url_for('static', filename='imges/inserts.jpg') }}" alt="Outdoor">
+        <h3>INSERTS</h3>
+        <p>Créez une ambiance chaleureuse en extérieur tout en ajoutant une touche moderne à votre terrasse.</p>
+      </div>
+  
+    </div>
+  </section>
+  
+
+
+  <section class="barre-orange">
+    <div class="barre-container">
+  
+      <div class="barre-block">
+        <i class="fas fa-fire-extinguisher"></i>
+        <div class="texte">
+          <span class="titre">Ramonez votre Cheminée</span>
+          <span class="sous-titre">Prenez rendez-vous en quelques clics</span>
+        </div>
+      </div>
+  
+      <div class="barre-block">
+        <i class="fas fa-tools"></i>
+        <div class="texte">
+          <span class="titre">Service Réparation</span>
+          <span class="sous-titre">Entretien, dépannage, remplacement</span>
+        </div>
+      </div>
+  
+      <div class="barre-block">
+        <i class="fas fa-truck"></i>
+        <div class="texte">
+          <span class="titre">Livraison de Bois</span>
+          <span class="sous-titre">Bois de chauffage livré chez vous</span>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+
+
+
+<section class="galerie-inspiration">
+    <h2>Galerie d'Inspiration</h2>
+    <p class="slogan">Diversité et Élégance des Cheminées au Bioéthanol</p>
+<div class="slider-infinite">
+    <div class="slider-track">
+        {% for img in [
+            'imges/c1.jpeg', 'imges/c6.jpg', 'imges/c5.jpg',
+            'imges/41.jpg', 'imges/16.jpg', 'imges/c6.jpg', 'imges/39.jpg',
+            'imges/30.jpg', 'imges/12.jpg', 'imges/33.jpg', 'imges/23.jpg'
+        ] %}
+        <img src="{{ url_for('static', filename=img) }}" alt="Cheminée">
+        {% endfor %}
+        {# DUPLIQUÉES #}
+        {% for i in range(12, 70) %}
+        <img src="{{ url_for('static', filename='imges/' ~ i ~ '.jpg') }}" alt="Cheminée {{ i }}">
+        {% endfor %}
+    </div>
+</div>
+
+
+
+<section class="presentation-entreprise">
+    <div class="presentation-container">
+      <div class="presentation-texte">
+        <h2 class="section-title">Cheminée Maroc</h2>
+
+        <h4>Votre expert en cheminées dans tout le Maroc</h4>
+        <p>
+          Depuis plus de 10 ans, <strong>Cheminée Maroc</strong> accompagne particuliers, architectes et professionnels dans leurs projets d’installation, rénovation et entretien de cheminées.
+        </p>
+  
+        <div class="presentation-services">
+          <div class="service">
+            <span>🔥</span>
+            <div><strong>Installation</strong><br>Poêles, inserts, foyers, cheminées</div>
+          </div>
+          <div class="service">
+            <span>🛠</span>
+            <div><strong>Réparation</strong><br>Remplacement de pièces & maintenance</div>
+          </div>
+          <div class="service">
+            <span>🧹</span>
+            <div><strong>Ramonage</strong><br>Service rapide et professionnel</div>
+          </div>
+          <div class="service">
+            <span>🛒</span>
+            <div><strong>Vente</strong><br>Bois, granulés, bioéthanol</div>
+          </div>
+        </div>
+  
+        <p class="villes">
+          📍 Présents dans tout le Maroc : Casablanca, Rabat, Marrakech, Agadir, Fès, Tanger, Oujda, et plus encore.
+        </p>
+      </div>
+  
+      <div class="presentation-image">
+        <img src="{{ url_for('static', filename='imges/kh.jpg') }}" alt="Cheminée moderne">
+      </div>
+    </div>
+  </section>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+

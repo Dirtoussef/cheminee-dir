@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheminées Prestige</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="{% if request.path == '/Services' or request.path == '/Nos Réalisations' %}navbar-orange{% else %}navbar-light{% endif %}">
+
+
+
+  <nav class="navbar">
+    <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+    <ul class="nav-list">
+      <li><a href="{{ url_for('home') }}">Accueil</a></li>
+
+      <li><a href="/Services">Services</a></li>
+      <li><a href="/Nos Réalisations">Nos Réalisations</a></li>
+    </ul>
+  </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-links">
+            <a href="mailto:contact@chemineemaroc.com" target="_blank">
+              <i class="fas fa-envelope"></i> Email
+            </a>
+            <a href="https://wa.me/212612345678" target="_blank">
+              <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://www.instagram.com/chemineemaroc" target="_blank">
+              <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://www.linkedin.com/company/chemineemaroc" target="_blank">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://www.google.com/maps?q=Cheminée+Maroc" target="_blank">
+              <i class="fas fa-map-marker-alt"></i> Adresse
+            </a>
+          </div>
+          <p class="footer-copy">© 2024 Cheminée Maroc. Tous droits réservés.</p>
+        </div>
+      </footer>
+
+      <!-- WhatsApp Float -->
+<a href="https://wa.me/212612345678?text=Bonjour%20Cheminée%20Maroc,%20je%20souhaite..." 
+   class="whatsapp-float" 
+   target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>    
+
+</body>
+</html>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('mobile-menu');
+    const navList = document.querySelector('.nav-list');
+
+    menuToggle.addEventListener('click', () => {
+      navList.classList.toggle('active');
+    });
+
+    // Ferme le menu quand on clique sur un lien
+    document.querySelectorAll('.nav-list a').forEach(link => {
+      link.addEventListener('click', () => {
+        navList.classList.remove('active');
+      });
+    });
+  });
+</script>
+
+
+

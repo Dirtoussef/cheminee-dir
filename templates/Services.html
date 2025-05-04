@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- SECTION 1 : Installation -->
+<section class="service-section">
+  <div class="service-content">
+    <div class="service-text">
+      <h2 class="section-title">Installation de Cheminées</h2>
+      <p>
+        Nous vous accompagnons dans l’installation de tous types de cheminées : foyers ouverts, fermés, inserts, poêles à bois ou à granulés.
+        <br><br>
+        Que vous soyez particulier ou professionnel, notre équipe s’adapte à votre projet en garantissant sécurité, performance et esthétisme.
+      </p>
+    </div>
+    <div class="service-image">
+      <img src="{{ url_for('static', filename='imges/srvc.jpg') }}" alt="Installation de cheminée">
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2 : Ramonage -->
+<section class="service-section reverse">
+  <div class="service-content">
+    <div class="service-text">
+      <h2 class="section-title">Ramonage Professionnel</h2>
+      <p>
+        Le ramonage est obligatoire et essentiel pour assurer la sécurité de votre foyer. Nous proposons un service de ramonage rapide, propre et conforme aux normes en vigueur.
+        <br><br>
+        Nos ramoneurs qualifiés interviennent dans tout le Maroc avec matériel professionnel.
+      </p>
+    </div>
+    <div class="service-image">
+      <img src="{{ url_for('static', filename='imges/rmng.jpg') }}" alt="Ramonage de cheminée">
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3 : FAQ -->
+<section class="faq">
+  <h2 class="section-title">Foire aux questions</h2>
+  <div class="faq-item">
+    <h4>🛠 Est-ce que vous installez sur tout le Maroc ?</h4>
+    <p>Oui, nous intervenons partout grâce à notre réseau local.</p>
+  </div>
+  <div class="faq-item">
+    <h4>🧹 Quand faire un ramonage ?</h4>
+    <p>Au moins 1 fois par an, selon la réglementation en vigueur.</p>
+  </div>
+</section>
+
+
+
+<section class="engagements">
+    <h2 class="section-title">Nos engagements</h2>
+    <div class="engagements-grid">
+      <div class="engagement-box">
+        <i class="fas fa-award"></i>
+        <h4>Qualité garantie</h4>
+        <p>Nos cheminées sont certifiées CE et respectent les normes marocaines.</p>
+      </div>
+      <div class="engagement-box">
+        <i class="fas fa-stopwatch"></i>
+        <h4>Intervention rapide</h4>
+        <p>Installation ou ramonage dans un délai de 24 à 72h selon votre ville.</p>
+      </div>
+      <div class="engagement-box">
+        <i class="fas fa-users"></i>
+        <h4>Équipe qualifiée</h4>
+        <p>Installateurs et ramoneurs expérimentés à votre service.</p>
+      </div>
+      <div class="engagement-box">
+        <i class="fas fa-comments"></i>
+        <h4>Suivi client</h4>
+        <p>Nous restons disponibles après chaque intervention pour vous accompagner.</p>
+      </div>
+    </div>
+  </section>
+  
+
+
+
+<!-- SECTION 4 : CTA -->
+<section class="cta-section">
+  <div class="cta-services">
+    <a href="/contact" class="btn-orange">📩 Demander un devis gratuit</a>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<section class="temoignages">
+    <h2 class="section-title">Ils nous font confiance</h2>
+    <div class="temoignage-cards">
+      <div class="temoignage">
+        <p>“Service rapide et soigné. Pose parfaite. Je recommande !”</p>
+        <span>– Amine, Casablanca</span>
+      </div>
+      <div class="temoignage">
+        <p>“Cheminée installée en 2 jours. Très bon rapport qualité/prix.”</p>
+        <span>– Salma, Rabat</span>
+      </div>
+    </div>
+  </section>
+  
+
+{% endblock %}

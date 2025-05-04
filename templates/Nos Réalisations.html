@@ -1,0 +1,17 @@
+
+{% extends "base.html" %}
+{% block content %}
+<section class="realisations">
+  <h2 class="section-title">Nos Réalisations</h2>
+  <div class="realisations-grid">
+    {% for i in range(12, 70) %}
+      <div class="real-photo">
+        <img src="{{ url_for('static', filename='imges/' ~ i ~ '.jpg') }}" alt="Cheminée {{ i }}">
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+
+
+{% endblock %}
