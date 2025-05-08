@@ -1,0 +1,11 @@
+[build]
+  command = "pip install -r requirements.txt && flask build"
+  publish = "static"  # Dossier contenant vos assets statiques
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[functions]
+  directory = "functions"  # Pour les fonctions serverless si besoin

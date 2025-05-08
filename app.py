@@ -1,31 +1,15 @@
-from flask import Flask, render_template, jsonify
-import json
+from flask import Flask, send_from_directory
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 
-def load_produits():
-    with open("data/produits.json", "r", encoding="utf-8") as f:
-        return json.load(f)
+@app.route('/')
+def serve():
+    return send_from_directory('static', 'index.html')
 
-@app.route("/")
-def home():
-    return render_template("index.html")
+@app.route('/<path:path>')
+def serve_static(path):
+    return send_from_directory('static', path)
 
-@app.route("/Services")
-def services():
-    return render_template("Services.html")
-
-@app.route("/Nos Réalisations")
-def realisations():
-    return render_template("Nos Réalisations.html")
-
-@app.route("/Produits/<int:id>")
-def produit(id):
-    produits = load_produits()
-    produit = next((p for p in produits if p["id"] == id), None)
-    return render_template("Produits.html", produit=produit)
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8080))  # Utilise la variable PORT imposée par Railway
-    app.run(host="0.0.0.0", port=port)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
