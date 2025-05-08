@@ -1,6 +1,4 @@
 [build]
-  command = "echo 'Skipping Python installation for static site'"
-  publish = "static"  # ou le dossier contenant vos fichiers HTML/JS/CSS
-
-[context.production]
-  environment = { PYTHON_VERSION = "3.10" }
+  command = "echo 'Build statique'"
+  publish = "public"
+  functions = "netlify/functions"
