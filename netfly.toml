@@ -1,11 +1,6 @@
 [build]
-  command = "pip install -r requirements.txt && flask build"
-  publish = "static"  # Dossier contenant vos assets statiques
+  command = "echo 'Skipping Python installation for static site'"
+  publish = "static"  # ou le dossier contenant vos fichiers HTML/JS/CSS
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-[functions]
-  directory = "functions"  # Pour les fonctions serverless si besoin
+[context.production]
+  environment = { PYTHON_VERSION = "3.10" }
