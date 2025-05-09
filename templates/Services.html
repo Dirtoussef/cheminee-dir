@@ -82,9 +82,33 @@
 <!-- SECTION 4 : CTA -->
 <section class="cta-section">
   <div class="cta-services">
-    <a href="/contact" class="btn-orange">📩 Demander un devis gratuit</a>
+    <button id="show-form-btn" class="btn-orange">📩 Demander un devis gratuit</button>
+
+    <form action="/contact" method="POST" id="devis-form" class="devis-form" style="display: none;">
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" name="nom" required>
+
+      <label for="prenom">Prénom :</label>
+      <input type="text" id="prenom" name="prenom" required>
+
+      <label for="email">Email :</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Votre demande :</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit" class="btn-orange">📨 Envoyer la demande</button>
+    </form>
   </div>
 </section>
+
+<!-- JavaScript -->
+<script>
+  document.getElementById('show-form-btn').addEventListener('click', function () {
+    document.getElementById('devis-form').style.display = 'block';
+    this.style.display = 'none'; // Cache le bouton
+  });
+</script>
 
 
 
