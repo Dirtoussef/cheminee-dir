@@ -14,7 +14,7 @@
 
   <nav class="navbar">
     <div class="menu-toggle" id="mobile-menu">&#9776;</div>
-    <ul class="nav-list">
+    <ul class="nav-list" id="nav-list"> <!-- Ajout d'un ID -->
         <li><a href="{{ url_for('home') }}">Accueil</a></li>
         <li><a href="/Services">Services</a></li>
         <li><a href="/Nos Réalisations">Nos Réalisations</a></li>
@@ -60,22 +60,21 @@
 
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const menuToggle = document.getElementById('mobile-menu');
-    const navList = document.querySelector('.nav-list');
+  document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('mobile-menu');
+      const navList = document.getElementById('nav-list');
 
-    menuToggle.addEventListener('click', () => {
-      navList.classList.toggle('active');
-    });
-
-    // Ferme le menu quand on clique sur un lien
-    document.querySelectorAll('.nav-list a').forEach(link => {
-      link.addEventListener('click', () => {
-        navList.classList.remove('active');
+      // Gestion du clic sur l'icône du menu
+      menuToggle.addEventListener('click', function(e) {
+          e.stopPropagation(); // Empêche la propagation au document
+          navList.classList.toggle('active'); // Bascule l'état du menu
       });
-    });
+
+      // Ferme le menu après avoir cliqué sur un lien
+      document.querySelectorAll('.nav-list a').forEach(link => {
+          link.addEventListener('click', () => {
+              navList.classList.remove('active');
+          });
+      });
   });
 </script>
-
-
-

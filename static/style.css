@@ -783,73 +783,63 @@ body.navbar-orange .navbar a {
 
 
 
-/* Version Desktop */
-.nav-list {
-    display: flex;
-    gap: 30px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-/* Version Desktop - Cacher le menu-toggle */
-.menu-toggle {
-  display: none;
-}
-
-/* Version Mobile */
 @media (max-width: 768px) {
   .navbar {
       padding: 15px 20px;
+      display: flex;
       justify-content: flex-end;
   }
-  
+
   .nav-list {
-      display: none;
-      position: absolute;
+      display: none; /* Masqué par défaut */
+      position: fixed;
       top: 70px;
       left: 0;
       width: 100%;
-      background: rgba(0, 0, 0, 0.9);
+      background: rgba(0, 0, 0, 0.95);
       flex-direction: column;
       gap: 0;
       padding: 20px 0;
-      z-index: 100;
+      z-index: 1000;
+      transition: transform 0.3s ease, opacity 0.3s ease; /* Transition fluide */
+      transform: translateY(-20px);
+      opacity: 0;
   }
-  
+
   .nav-list.active {
-      display: flex;
+      display: flex; /* Visible avec flex */
+      transform: translateY(0);
+      opacity: 1;
   }
-  
+
   .nav-list li {
       padding: 15px 20px;
       text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
   }
-  
+
   .nav-list a {
       width: 100%;
       display: block;
+      font-size: 18px;
+      padding: 10px;
   }
-  
+
   .menu-toggle {
       display: block;
-      font-size: 24px;
-      color: white;
+      font-size: 28px;
       cursor: pointer;
+      z-index: 1001;
   }
-  
-  /* Pour la page d'accueil */
-  body.navbar-light .menu-toggle {
-      color: white;
-  }
-  
-  /* Pour les pages Services/Réalisations */
-  body.navbar-orange .menu-toggle {
-      color: #f39c12;
-  }
+
+  body.navbar-light .menu-toggle { color: white; }
+  body.navbar-orange .menu-toggle { color: #f39c12; }
 }
 
-
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
   /* WhatsApp Floating Button */
 .whatsapp-float {
