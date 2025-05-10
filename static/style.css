@@ -785,62 +785,85 @@ body.navbar-orange .navbar a {
 
 @media (max-width: 768px) {
   .navbar {
-      padding: 15px 20px;
-      display: flex;
-      justify-content: flex-end;
-  }
-
-  .nav-list {
-      display: none; /* Masqué par défaut */
-      position: fixed;
-      top: 70px;
-      left: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.95);
-      flex-direction: column;
-      gap: 0;
-      padding: 20px 0;
-      z-index: 1000;
-      transition: transform 0.3s ease, opacity 0.3s ease; /* Transition fluide */
-      transform: translateY(-20px);
-      opacity: 0;
-  }
-
-  .nav-list.active {
-      display: flex; /* Visible avec flex */
-      transform: translateY(0);
-      opacity: 1;
-  }
-
-  .nav-list li {
-      padding: 15px 20px;
-      text-align: center;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
-
-  .nav-list a {
-      width: 100%;
-      display: block;
-      font-size: 18px;
-      padding: 10px;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center; /* Centre l'icône */
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 10;
   }
 
   .menu-toggle {
-      display: block;
-      font-size: 28px;
-      cursor: pointer;
-      z-index: 1001;
+    display: block;
+    font-size: 32px; /* Taille augmentée pour plus de visibilité */
+    cursor: pointer;
+    z-index: 1001;
+    color: #fff; /* Couleur par défaut : blanche */
+    padding: 5px 10px; /* Espace autour de l'icône */
+    border-radius: 5px; /* Bordure arrondie pour style */
+    background: rgba(0, 0, 0, 0.4); /* Fond léger pour contraste */
+    transition: background 0.3s ease, transform 0.3s ease; /* Transition fluide */
   }
 
-  body.navbar-light .menu-toggle { color: white; }
-  body.navbar-orange .menu-toggle { color: #f39c12; }
+  /* Couleurs spécifiques selon la classe du body */
+  body.navbar-light .menu-toggle {
+    color: #fff; /* Blanche pour contraste sur fond sombre (hero) */
+    background: rgba(0, 0, 0, 0.4); /* Fond semi-transparent */
+  }
+
+  body.navbar-orange .menu-toggle {
+    color: #f39c12; /* Orange pour Services/Nos Réalisations */
+    background: rgba(255, 255, 255, 0.3); /* Fond clair pour contraste */
+  }
+
+  /* Effet hover pour interactivité */
+  .menu-toggle:hover {
+    background: rgba(0, 0, 0, 0.6); /* Fond plus sombre au survol */
+    transform: scale(1.1); /* Léger zoom */
+  }
+
+  .nav-list {
+    display: none; /* Masqué par défaut */
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    gap: 0;
+    padding: 20px 0;
+    z-index: 1000;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transition fluide */
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  .nav-list.active {
+    display: flex; /* Visible avec flex */
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .nav-list li {
+    padding: 15px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-list a {
+    width: 100%;
+    display: block;
+    font-size: 18px;
+    padding: 10px;
+  }
 }
 
 @keyframes slideDown {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
   /* WhatsApp Floating Button */
 .whatsapp-float {
     position: fixed;
