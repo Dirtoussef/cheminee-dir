@@ -15,12 +15,11 @@
   <nav class="navbar">
     <div class="menu-toggle" id="mobile-menu">&#9776;</div>
     <ul class="nav-list">
-      <li><a href="{{ url_for('home') }}">Accueil</a></li>
-
-      <li><a href="/Services">Services</a></li>
-      <li><a href="/Nos Réalisations">Nos Réalisations</a></li>
+        <li><a href="{{ url_for('home') }}">Accueil</a></li>
+        <li><a href="/Services">Services</a></li>
+        <li><a href="/Nos Réalisations">Nos Réalisations</a></li>
     </ul>
-  </nav>
+</nav>
 
     <main>
         {% block content %}{% endblock %}

@@ -792,49 +792,62 @@ body.navbar-orange .navbar a {
     padding: 0;
   }
   
-  .menu-toggle {
-    display: none;
-  }
-  
-  /* Version Mobile */
-  @media (max-width: 768px) {
-    .navbar {
-      flex-wrap: wrap;
-      padding: 15px 20px;
-    }
-  
-    .nav-list {
-      display: none;
-      width: 100%;
-      order: 2;
-      background: inherit;
-      padding: 10px 0;
-      margin-top: 15px;
-    }
-  
-    .nav-list.active {
-      display: flex;
-      flex-direction: column;
-      animation: slideDown 0.3s ease;
-    }
-  
-    .nav-list li {
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-  
-    .menu-toggle {
-      display: block;
-      order: 1;
-      margin-left: auto;
-    }
-  }
-  
-  @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-10px) }
-    to { opacity: 1; transform: translateY(0) }
-  }
+/* Version Desktop - Cacher le menu-toggle */
+.menu-toggle {
+  display: none;
+}
 
+/* Version Mobile */
+@media (max-width: 768px) {
+  .navbar {
+      padding: 15px 20px;
+      justify-content: flex-end;
+  }
+  
+  .nav-list {
+      display: none;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      flex-direction: column;
+      gap: 0;
+      padding: 20px 0;
+      z-index: 100;
+  }
+  
+  .nav-list.active {
+      display: flex;
+  }
+  
+  .nav-list li {
+      padding: 15px 20px;
+      text-align: center;
+  }
+  
+  .nav-list a {
+      width: 100%;
+      display: block;
+  }
+  
+  .menu-toggle {
+      display: block;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+  }
+  
+  /* Pour la page d'accueil */
+  body.navbar-light .menu-toggle {
+      color: white;
+  }
+  
+  /* Pour les pages Services/Réalisations */
+  body.navbar-orange .menu-toggle {
+      color: #f39c12;
+  }
+}
 
 
 
