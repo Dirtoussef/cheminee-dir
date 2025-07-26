@@ -96,18 +96,11 @@ body.navbar-orange .navbar a {
 }
 
 .hero::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* filtre foncé pour que le texte ressorte */
-    z-index: 1;
+    z-index: 0 !important;
 }
-
 .hero-text {
-    position: relative;
     z-index: 2;
+    position: relative;
 }
 
 .hero-text h1 {
@@ -778,6 +771,98 @@ body.navbar-orange .navbar a {
         flex-direction: column;
     }
 }
+
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #222;
+  overflow-x: hidden;
+  padding-top: 60px;
+  z-index: 9999;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+}
+.sidebar.open {
+  transform: translateX(0%);
+}
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 9998;
+  transition: opacity 0.3s ease;
+}
+.sidebar-overlay.show {
+  display: block;
+}
+
+
+/* Quand le menu est ouvert */
+.sidebar.open {
+  transform: translateX(0%);
+}
+
+.sidebar a {
+  padding: 12px 24px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #444;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Bouton hamburger mobile */
+.openbtn {
+  font-size: 20px;
+  background-color: #222;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+  z-index: 10000;
+  position: relative;
+  display: none; /* visible seulement en mobile */
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .openbtn {
+    display: block;
+  }
+
+  .desktop-navbar {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+
 
 
 
