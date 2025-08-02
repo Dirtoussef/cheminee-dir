@@ -1029,8 +1029,8 @@ body.navbar-orange .navbar a {
 
 .openbtn {
     font-size: 20px;
-    background-color: #222;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
     padding: 10px 15px;
     border: none;
     cursor: pointer;
