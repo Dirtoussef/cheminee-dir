@@ -895,7 +895,7 @@ body.navbar-orange .navbar a {
     color: #fff; /* Couleur par défaut : blanche */
     padding: 5px 10px; /* Espace autour de l'icône */
     border-radius: 5px; /* Bordure arrondie pour style */
-    background: rgba(0, 0, 0, 0.4); /* Fond léger pour contraste */
+    background: rgba(245, 245, 245, 0.4); /* Fond léger pour contraste */
     transition: background 0.3s ease, transform 0.3s ease; /* Transition fluide */
   }
 
@@ -1010,7 +1010,7 @@ body.navbar-orange .navbar a {
     align-items: center;
     height: 45px;
     justify-content: flex-start;
-    gap: 100px; 
+    gap: 85px; 
     background-color: #ffffff; /* Dark background for contrast */
     padding: 6px 10px;
     position: fixed;
