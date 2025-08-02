@@ -1,17 +1,25 @@
-
 {% extends "base.html" %}
 {% block content %}
+
 <section class="realisations">
   <h2 class="section-title">Nos Réalisations</h2>
   <div class="realisations-grid">
+
+    {# Images C22.jpeg à C46.jpeg #}
+    {% for i in range(22, 46) %}
+      <div class="real-photo">
+        <img src="{{ url_for('static', filename='imges/C' ~ i ~ '.jpeg') }}" alt="Cheminée C{{ i }}">
+      </div>
+    {% endfor %}
+
+    {# Images 12.jpg à 69.jpg #}
     {% for i in range(12, 70) %}
       <div class="real-photo">
         <img src="{{ url_for('static', filename='imges/' ~ i ~ '.jpg') }}" alt="Cheminée {{ i }}">
       </div>
     {% endfor %}
+
   </div>
 </section>
-
-
 
 {% endblock %}

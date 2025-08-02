@@ -9,8 +9,7 @@
 </head>
 <body class="{% if request.path == '/Services' or request.path == '/Nos Réalisations' %}navbar-orange{% else %}navbar-light{% endif %}">
 
-    <!-- Bouton hamburger pour mobile -->
-    <div class="openbtn" id="openSidebar">&#9776;</div>
+  
 
     <!-- Menu latéral gauche (sidebar mobile) -->
     <div id="mySidebar" class="sidebar">
@@ -19,6 +18,17 @@
         <a href="/Services">Services</a>
         <a href="/Nos Réalisations">Nos Réalisations</a>
     </div>
+
+
+
+<div class="mobile-header">
+    <button class="openbtn" id="openSidebar" aria-label="Ouvrir le menu">&#9776;</button>
+    <a href="{{ url_for('home') }}">
+        <img src="{{ url_for('static', filename='imges/Fireplace.png') }}" alt="Cheminées Prestige Logo" class="mobile-logo">
+    </a>
+</div>
+    
+
     <!-- 👉 Overlay pour fermer le menu mobile en cliquant à côté -->
 <div id="sidebarOverlay" class="sidebar-overlay"></div>
 

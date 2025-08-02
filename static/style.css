@@ -1004,3 +1004,43 @@ body.navbar-orange .navbar a {
       font-size: 28px;
     }
   }
+
+.mobile-header {
+    display: none; /* Hidden by default for desktop */
+    align-items: center;
+    justify-content: flex-start;
+    gap: 160px; 
+    background-color: #ffffff; /* Dark background for contrast */
+    padding: 12px 20px;
+    position: fixed;
+    top: 0;
+    left: 0px;
+    right: 0;
+    z-index: 9999;
+}
+
+.mobile-logo {
+    height: 60px;
+    width: 100px;;
+    object-fit: contain;
+    right: 200px;
+}
+
+.openbtn {
+    font-size: 20px;
+    background-color: #222;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+@media (max-width: 768px) {
+    .mobile-header {
+        display: flex; /* Show on mobile */
+    }
+    .desktop-navbar {
+        display: none; /* Hide desktop navbar on mobile */
+    }
+}

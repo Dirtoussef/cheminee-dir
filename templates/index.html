@@ -71,22 +71,31 @@
 
 <section class="galerie-inspiration">
     <h2>Galerie d'Inspiration</h2>
-    <p class="slogan">Diversité et Élégance des Cheminées Inserts ET  au Bioéthanol</p>
-<div class="slider-infinite">
-    <div class="slider-track">
-        {% for img in [
-            'imges/c1.jpeg', 'imges/c6.jpg', 'imges/c5.jpg',
-            'imges/41.jpg', 'imges/16.jpg', 'imges/c6.jpg', 'imges/39.jpg',
-            'imges/30.jpg', 'imges/12.jpg', 'imges/33.jpg', 'imges/23.jpg'
-        ] %}
-        <img src="{{ url_for('static', filename=img) }}" alt="Cheminée">
-        {% endfor %}
-        {# DUPLIQUÉES #}
-        {% for i in range(12, 70) %}
-        <img src="{{ url_for('static', filename='imges/' ~ i ~ '.jpg') }}" alt="Cheminée {{ i }}">
-        {% endfor %}
+    <p class="slogan">Diversité et Élégance des Cheminées Inserts ET au Bioéthanol</p>
+
+    <div class="slider-infinite">
+        <div class="slider-track">
+            {# Définir toutes les images à afficher manuellement (jpeg + jpg) #}
+            {% set images = [
+                'imges/c1.jpeg', 'imges/c6.jpg', 'imges/c5.jpg', 'imges/C22.jpeg',
+                'imges/C23.jpeg', 'imges/C24.jpeg', 'imges/C25.jpeg', 'imges/C26.jpeg', 'imges/C27.jpeg',
+                'imges/41.jpg', 'imges/16.jpg', 'imges/39.jpg',
+                'imges/30.jpg', 'imges/12.jpg', 'imges/33.jpg', 'imges/23.jpg'
+            ] %}
+
+            {# Boucle pour afficher toutes les images manuelles (jpg et jpeg) #}
+            {% for img in images %}
+                <img src="{{ url_for('static', filename=img) }}" alt="Cheminée">
+            {% endfor %}
+
+            {# Duplication automatique avec des noms numériques .jpg uniquement (ex: 12.jpg à 69.jpg) #}
+            {% for i in range(12, 70) %}
+                <img src="{{ url_for('static', filename='imges/' ~ i ~ '.jpg') }}" alt="Cheminée {{ i }}">
+            {% endfor %}
+        </div>
     </div>
-</div>
+</section>
+
 
 
 
