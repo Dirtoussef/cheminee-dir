@@ -800,7 +800,7 @@ body.navbar-orange .navbar a {
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(255, 255, 255, 0.5);
   z-index: 9998;
   transition: opacity 0.3s ease;
 }
@@ -840,9 +840,9 @@ body.navbar-orange .navbar a {
 
 /* Bouton hamburger mobile */
 .openbtn {
-  font-size: 20px;
+  font-size: 10px;
   background-color: #222;
-  color: white;
+  color: rgb(0, 0, 0);
   padding: 10px 15px;
   border: none;
   cursor: pointer;
@@ -1008,13 +1008,14 @@ body.navbar-orange .navbar a {
 .mobile-header {
     display: none; /* Hidden by default for desktop */
     align-items: center;
+    height: 45px;
     justify-content: flex-start;
-    gap: 160px; 
+    gap: 100px; 
     background-color: #ffffff; /* Dark background for contrast */
-    padding: 12px 20px;
+    padding: 6px 10px;
     position: fixed;
     top: 0;
-    left: 0px;
+    left: 0;
     right: 0;
     z-index: 9999;
 }
