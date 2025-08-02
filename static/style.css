@@ -1010,7 +1010,7 @@ body.navbar-orange .navbar a {
     align-items: center;
     height: 45px;
     justify-content: flex-start;
-    gap: 85px; 
+    gap: 75px; 
     background-color: #ffffff; /* Dark background for contrast */
     padding: 6px 10px;
     position: fixed;
