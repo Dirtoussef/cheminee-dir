@@ -16,7 +16,7 @@ def home():
 def services():
     return render_template("Services.html")
 
-@app.route("/Nos Réalisations")
+@app.route("/Nos-Réalisations")
 def realisations():
     return render_template("Nos Réalisations.html")
 
